@@ -11,8 +11,8 @@ export function Board() {
   }
 
   return (
-    <section>
-      <ul className="grid grid-cols-4 gap-2 ">
+    <section className="grid justify-center">
+      <ul className="grid lg:grid-cols-4 sm:grid-cols-3 gap-2 w-fit ">
         {CARDS.map((img) => (
           <li
             className="w-full h-auto rounded border p-3 cursor-pointer bg-slate-200 "
