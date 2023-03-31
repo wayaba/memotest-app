@@ -1,7 +1,7 @@
 export function Header() {
   return (
-    <header className="flex flex-col text-center m-5 ">
-      <h5 className="text-cyan-50 text-6xl">Memotest</h5>
+    <header className="m-5 text-center flex flex-col">
+      <h5 className="text-6xl text-cyan-50">Memotest</h5>
     </header>
   )
 }
