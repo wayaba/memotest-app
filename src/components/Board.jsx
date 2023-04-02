@@ -11,7 +11,7 @@ export function Board() {
   }
 
   return (
-    <section className="grid grid-cols-3 sm:grid-cols-4 gap-4 m-6">
+    <section className="grid grid-cols-3 sm:grid-cols-4 gap-4 m-auto w-fit">
       {CARDS.map((img) => (
         <div
           className={`rounded-lg 
@@ -20,6 +20,7 @@ export function Board() {
                       items-center 
                       m-1 
                       p-4 
+                      w-fit
                       bg-gray-400`}
           key={img.id}
           onClick={() => handleClick(img)}

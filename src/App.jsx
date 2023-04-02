@@ -4,8 +4,8 @@ import { Header } from './components/Header'
 
 function App() {
   return (
-    <main className="grid min-h-screen place-content-center w-auto bg-slate-900 font-press-start">
-      <section className="min-w-min">
+    <main className="grid grid-cols-1 h-screen place-content-center bg-slate-900 font-press-start">
+      <section className="m-4">
         <Header />
         <Board />
         <Footer author="Pablo Pedraza" github="wayaba" />
