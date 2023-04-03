@@ -32,7 +32,7 @@ export function Board() {
       <section className="text-center m-4">
         <h2 className="text-white">Tiempo {time.toFixed(2)}</h2>
       </section>
-      <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 m-auto w-fit">
+      <div className="grid grid-cols-3 sm:grid-cols-4 m-auto w-fit">
         {cards.map((img) => (
           <div
             className="rounded-lg border-2 border-black items-center m-1 p-4 w-fitbg-gray-400"
