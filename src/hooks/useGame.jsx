@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import confetti from 'canvas-confetti'
-import { CARDS, sortCards } from '../cards'
-export function useGame() {
+import { sortCards } from '../cards'
+export function useGame(cardQty = 12) {
   const [guessed, setGuessed] = useState([])
   const [cards, setCards] = useState([])
   const [selected, setSelected] = useState([])
   const [hasWin, setHasWin] = useState(false)
 
   useEffect(() => {
-    setCards(sortCards())
+    setCards(sortCards(cardQty))
   }, [])
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export function useGame() {
   }, [selected])
 
   useEffect(() => {
-    if (guessed.length === CARDS.length) {
+    if (guessed.length === cardQty) {
       confetti()
       setHasWin(true)
     }
@@ -40,7 +40,7 @@ export function useGame() {
     setGuessed([])
     setSelected([])
     setHasWin(false)
-    setCards(sortCards())
+    setCards(sortCards(cardQty))
   }
   return { showImg, hasWin, clickOnCard, restart, cards }
 }

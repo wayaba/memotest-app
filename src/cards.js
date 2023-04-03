@@ -1,19 +1,24 @@
 export const CARDS = [
-  'https://icongr.am/feather/bell.svg?size=128&color=ccda0b',
-  'https://icongr.am/feather/droplet.svg?size=128&color=0bb8da',
-  'https://icongr.am/feather/github.svg?size=128&color=000005',
-  'https://icongr.am/feather/moon.svg?size=128&color=6565c3',
-  'https://icongr.am/feather/smile.svg?size=128&color=db7448',
-  'https://icongr.am/feather/truck.svg?size=128&color=ee202a'
+  '/ace.svg',
+  '/astronaut-helmet.svg',
+  '/badger.svg',
+  '/barn-owl.svg',
+  '/bowling-strike.svg',
+  '/canadian-goose.svg',
+  '/castle.svg',
+  '/dwarf-face.svg',
+  '/pig.svg',
+  '/robe.svg',
+  '/shark-bite.svg',
+  '/telescope.svg'
 ]
-  .flatMap((img, index) => [
-    { id: index + 'a', value: img },
-    { id: index + 'b', value: img }
-  ])
-  .sort(() => Math.random() - 0.5)
 
-export function sortCards() {
-  return CARDS.sort(() => Math.random() - 0.5)
+export function sortCards(cardQty) {
+  return CARDS.slice(0, cardQty / 2)
+    .flatMap((img, index) => [
+      { id: index + 'a', value: img },
+      { id: index + 'b', value: img }
+    ])
+    .sort(() => Math.random() - 0.5)
 }
-export const HIDDEN_IMG =
-  'https://icongr.am/feather/cpu.svg?size=128&color=020005'
+export const HIDDEN_IMG = '/radar-sweep.svg'

@@ -11,7 +11,7 @@ export function Modal({ isVisible, onClose, time, onRestart }) {
           X
         </button>
         <div className="gird grid-col-1 items-center text-gray-200 text-center bg-slate-700 p-2 rounded-lg m-6">
-          <h1 className="lg:text-4xl md:text-2xl sm:text-2xl text-2xl m-2">
+          <h1 className="lg:text-4xl md:text-2xl sm:text-2xl text-lg m-2">
             🎊 !GANASTE! 🎊
           </h1>
           <p className="lg:text-md md:text-md sm:text-md text-sm m-4 ">
