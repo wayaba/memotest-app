@@ -1,8 +1,10 @@
+import { TwitterShareButton, TwitterIcon } from 'react-share'
+
 export function Modal({ isVisible, onClose, time, onRestart }) {
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
+    <div className="fixed inset-5 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10">
       <div className="w-[600px] flex flex-col">
         <button
           className="text-white text-xl place-self-end"
@@ -17,6 +19,21 @@ export function Modal({ isVisible, onClose, time, onRestart }) {
           <p className="lg:text-md md:text-md sm:text-md text-sm m-4 ">
             Tu tiempo fue de {time.toFixed(2)} segundos
           </p>
+          <div className="items-center text-center">
+            <TwitterShareButton
+              title={`!Gané! 🎊🎊 \nMi tiempo fue de ${time.toFixed(
+                2
+              )} segundos ⌛ \n`}
+              url={'https://memotest-app.vercel.app/'}
+              hashtags={['dev', 'reactjs', 'game']}
+            >
+              <div className="flex flex-auto border rounded-lg p-1 m-1 hover:bg-slate-500">
+                <div className="m-1">Compartilo en</div>
+                <TwitterIcon size={32} round />
+              </div>
+            </TwitterShareButton>
+          </div>
+
           <small className="lg:text-2xl md:text-2xl sm:text-2xl text-lg m-4 ">
             ¿Querés jugar de nuevo?
           </small>

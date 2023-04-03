@@ -9,7 +9,7 @@ export function Game() {
       {start ? (
         <Board cardQty={cardQty} />
       ) : (
-        <div className="gird grid-col-1 items-center text-gray-200 text-center p-2 rounded-lg m-6">
+        <section className="gird grid-col-1 items-center text-gray-200 text-center p-2 rounded-lg m-6">
           <p>Selecciona la cantidad de tarjetas</p>
           <div className="flex flex-row items-center place-content-center m-2">
             <div className="p-1">
@@ -37,7 +37,7 @@ export function Game() {
           >
             Comenzar juego
           </button>
-        </div>
+        </section>
       )}
     </>
   )
