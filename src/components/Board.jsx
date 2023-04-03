@@ -1,65 +1,58 @@
-import { CARDS, HIDDEN_IMG } from '../cards'
+import { HIDDEN_IMG } from '../cards'
 import { Modal } from './Modal'
 import { useGame } from '../hooks/useGame'
+import { useChronometer } from '../hooks/useChronometer'
+import { useEffect } from 'react'
 
 export function Board() {
-  const { guessed, selected, setSelected, hasWin, setHasWin } = useGame()
+  const {
+    showImg,
+    hasWin,
+    clickOnCard,
+    restart: restartGame,
+    cards
+  } = useGame()
+  const { time, setIsStarted, restart: restartChron } = useChronometer()
 
-  const handleClick = (img) => {
-    if (selected.includes(img)) return null
-    if (selected.length < 2) setSelected([...selected, img])
+  useEffect(() => {
+    setIsStarted(true)
+  }, [])
+
+  useEffect(() => {
+    if (hasWin) setIsStarted(false)
+  }, [hasWin])
+
+  const restart = () => {
+    restartChron()
+    restartGame()
   }
 
   return (
-    <section className="grid grid-cols-3 sm:grid-cols-4 gap-4 m-auto w-fit">
-      {CARDS.map((img) => (
-        <div
-          className={`rounded-lg 
-                       border-2 
-                      border-black 
-                      items-center 
-                      m-1 
-                      p-4 
-                      w-fit
-                      bg-gray-400`}
-          key={img.id}
-          onClick={() => handleClick(img)}
-        >
-          {selected.includes(img) || guessed.includes(img) ? (
+    <section className="grid grid-cols-1">
+      <section className="text-center m-4">
+        <h2 className="text-white">Tiempo {time.toFixed(2)}</h2>
+      </section>
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 m-auto w-fit">
+        {cards.map((img) => (
+          <div
+            className="rounded-lg border-2 border-black items-center m-1 p-4 w-fitbg-gray-400"
+            key={img.id}
+            onClick={() => clickOnCard(img)}
+          >
             <img
               className="p-2 rounded bg-white"
               alt={img.id}
-              src={img.value}
+              src={showImg(img) ? img.value : HIDDEN_IMG}
             />
-          ) : (
-            <img
-              className="p-2 rounded bg-white"
-              alt={img.id}
-              src={HIDDEN_IMG}
-            />
-          )}
-        </div>
-      ))}
-      <Modal isVisible={hasWin} onClose={() => setHasWin(false)}>
-        <div className="flex flex-col items-center text-gray-200 text-center">
-          <h1 className="text-4xl m-4">🎊 !GANASTE! 🎊</h1>
-          <small className="text-2xl m-4 ">¿Querés jugar de nuevo?</small>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              className="border rounded-lg hover:bg-slate-500 p-2"
-              onClick={() => location.reload()}
-            >
-              Si
-            </button>
-            <button
-              className="border rounded-lg hover:bg-slate-500 p-2"
-              onClick={() => setHasWin(false)}
-            >
-              No
-            </button>
           </div>
-        </div>
-      </Modal>
+        ))}
+      </div>
+      <Modal
+        isVisible={hasWin}
+        time={time}
+        onClose={() => location.reload()}
+        onRestart={() => restart()}
+      ></Modal>
     </section>
   )
 }

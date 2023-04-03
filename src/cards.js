@@ -12,5 +12,8 @@ export const CARDS = [
   ])
   .sort(() => Math.random() - 0.5)
 
+export function sortCards() {
+  return CARDS.sort(() => Math.random() - 0.5)
+}
 export const HIDDEN_IMG =
   'https://icongr.am/feather/cpu.svg?size=128&color=020005'
