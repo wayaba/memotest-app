@@ -29,13 +29,19 @@ export function Board({ cardQty = 12 }) {
 
   return (
     <section className="grid grid-cols-1">
-      <section className="text-center m-3">
-        <h2 className="text-white">Tiempo {time.toFixed(2)}</h2>
+      <section className="flex justify-center text-center m-2 text-white">
+        <h2 className="pt-2">Tiempo {time.toFixed(2)}</h2>
+        <button
+          onClick={() => location.reload()}
+          className="border rounded-lg hover:bg-slate-500 p-1 bg-slate-700 ml-2"
+        >
+          Volver
+        </button>
       </section>
       <div
         className={`grid grid-cols-4 sm:grid-cols-4 ${
           cards.length > 12 ? 'lg:grid-cols-6' : ''
-        } m-auto w-fit`}
+        } m-auto ${cards.length > 12 ? 'lg:w-3/4' : 'w-fit'}`}
       >
         {cards.map((img) => (
           <div
