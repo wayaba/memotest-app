@@ -21,7 +21,7 @@ export function Game() {
                 onChange={() => setCardQty(12)}
               />
               <label htmlFor="id12" className="m-2 p-1">
-                12 tarjetas
+                12
               </label>
             </div>
             <div className="p-1">
@@ -33,7 +33,7 @@ export function Game() {
                 onChange={() => setCardQty(24)}
               />
               <label htmlFor="id24" className="m-2 p-1">
-                24 tarjetas
+                24
               </label>
             </div>
           </div>
