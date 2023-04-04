@@ -14,21 +14,27 @@ export function Game() {
           <div className="flex flex-row items-center place-content-center m-4">
             <div className="p-1">
               <input
+                id="id12"
                 type="radio"
                 value="12"
                 checked={cardQty === 12}
                 onChange={() => setCardQty(12)}
               />
-              <label className="m-2 p-1">12 tarjetas</label>
+              <label htmlFor="id12" className="m-2 p-1">
+                12 tarjetas
+              </label>
             </div>
             <div className="p-1">
               <input
+                id="id24"
                 type="radio"
                 value="24"
                 checked={cardQty === 24}
                 onChange={() => setCardQty(24)}
               />
-              <label className="m-2 p-1">24 tarjetas</label>
+              <label htmlFor="id24" className="m-2 p-1">
+                24 tarjetas
+              </label>
             </div>
           </div>
           <button
