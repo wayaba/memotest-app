@@ -1,6 +1,6 @@
 import { TwitterShare } from './TwitterShare'
 
-export function Modal({ isVisible, onClose, time, onRestart }) {
+export function Modal({ isVisible, onClose, time, onRestart, cardQty }) {
   if (!isVisible) return null
 
   return (
@@ -17,10 +17,10 @@ export function Modal({ isVisible, onClose, time, onRestart }) {
             🎊 !GANASTE! 🎊
           </h1>
           <p className="lg:text-md md:text-md sm:text-md text-sm m-4 ">
-            Tu tiempo fue de {time.toFixed(2)} segundos
+            Con {cardQty} tarjetas, tu tiempo fue de {time.toFixed(2)} segundos
           </p>
-          <div className="items-center text-center">
-            <TwitterShare time={time} />
+          <div className="items-center text-center m-4">
+            <TwitterShare time={time} cardQty={cardQty} />
           </div>
 
           <small className="lg:text-2xl md:text-2xl sm:text-2xl text-lg m-4 ">

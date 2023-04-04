@@ -54,6 +54,7 @@ export function Board({ cardQty = 12 }) {
       <Modal
         isVisible={hasWin}
         time={time}
+        cardQty={cardQty}
         onClose={() => location.reload()}
         onRestart={() => restart()}
       ></Modal>
