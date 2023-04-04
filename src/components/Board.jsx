@@ -29,7 +29,7 @@ export function Board({ cardQty = 12 }) {
 
   return (
     <section className="grid grid-cols-1">
-      <section className="text-center m-4">
+      <section className="text-center m-3">
         <h2 className="text-white">Tiempo {time.toFixed(2)}</h2>
       </section>
       <div

@@ -4,7 +4,7 @@ import { Header } from './components/Header'
 
 function App() {
   return (
-    <main className="grid grid-cols-1 h-screen place-content-center bg-slate-900 font-press-start">
+    <main className="grid h-screen place-content-center bg-slate-900 font-press-start">
       <section className="m-4">
         <Header />
         <Game />
