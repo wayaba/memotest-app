@@ -42,5 +42,17 @@ export function useGame(cardQty = 12) {
     setHasWin(false)
     setCards(sortCards(cardQty))
   }
-  return { showImg, hasWin, clickOnCard, restart, cards }
+
+  const clickOnSecret = () => {
+    for (let index = 0; index < cards.length / 2; index++) {
+      let cardA = cards.find((o) => o.id === index + 'a')
+      let cardB = cards.find((o) => o.id === index + 'b')
+      if (!guessed.includes(cardA)) {
+        setGuessed([...guessed, cardA, cardB])
+        return null
+      }
+    }
+  }
+
+  return { showImg, hasWin, clickOnCard, restart, cards, clickOnSecret }
 }

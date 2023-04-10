@@ -10,7 +10,8 @@ export function Board({ cardQty = 12 }) {
     hasWin,
     clickOnCard,
     restart: restartGame,
-    cards
+    cards,
+    clickOnSecret
   } = useGame(cardQty)
   const { time, setIsStarted, restart: restartChron } = useChronometer()
 
@@ -29,8 +30,10 @@ export function Board({ cardQty = 12 }) {
 
   return (
     <section className="grid grid-cols-1">
-      <section className="flex justify-center text-center m-2 text-white">
-        <h2 className="pt-2">Tiempo {time.toFixed(2)}</h2>
+      <section className="flex justify-center items-center text-center m-2 text-white">
+        <div className="items-center">
+          <span onClick={clickOnSecret}>Tiempo</span> {time.toFixed(2)}
+        </div>
         <button
           onClick={() => location.reload()}
           className="border rounded-lg hover:bg-slate-500 p-1 bg-slate-700 ml-2"
