@@ -10,7 +10,12 @@ export const CARDS = [
   '/pig.svg',
   '/robe.svg',
   '/shark-bite.svg',
-  '/telescope.svg'
+  '/telescope.svg',
+  '/wolf-head.svg',
+  '/gold-mine.svg',
+  '/shambling-zombie.svg',
+  '/fishing.svg',
+  '/diamonds-smile.svg'
 ]
 
 export function sortCards(cardQty) {
