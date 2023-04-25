@@ -1,10 +1,10 @@
-# memotest-app
+# Memotest App 🎮
 
-Proyecto desarrollado con vite
+Memotest desarrollado con Vite + ReactJs + Tailwind
 
 ## Getting Started
 
-First, run the development server:
+Para correr localmente:
 
 ```bash
 npm run dev
