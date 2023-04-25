@@ -16,7 +16,7 @@ export function useGame(cardQty = 12) {
       if (selected[0].value === selected[1].value)
         setGuessed([...guessed, selected[0], selected[1]])
 
-      setTimeout(() => setSelected([]), 500)
+      setTimeout(() => setSelected([]), 600)
     }
   }, [selected])
 
