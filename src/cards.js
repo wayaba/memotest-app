@@ -19,7 +19,8 @@ export const CARDS = [
 ]
 
 export function sortCards(cardQty) {
-  return CARDS.sort(() => Math.random() - 0.5)
+  return [...CARDS]
+    .sort(() => Math.random() - 0.5)
     .slice(0, cardQty / 2)
     .flatMap((img, index) => [
       { id: index + 'a', value: img },

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import confetti from 'canvas-confetti'
 import { sortCards } from '../cards'
+
 export function useGame(cardQty = 12) {
   const [guessed, setGuessed] = useState([])
   const [cards, setCards] = useState([])
@@ -12,12 +13,12 @@ export function useGame(cardQty = 12) {
   }, [])
 
   useEffect(() => {
-    if (selected.length === 2) {
-      if (selected[0].value === selected[1].value)
-        setGuessed([...guessed, selected[0], selected[1]])
+    if (selected.length !== 2) return
 
-      setTimeout(() => setSelected([]), 600)
-    }
+    const [first, second] = selected
+    if (first.value === second.value) setGuessed([...guessed, first, second])
+
+    setTimeout(() => setSelected([]), 600)
   }, [selected])
 
   useEffect(() => {
@@ -45,8 +46,8 @@ export function useGame(cardQty = 12) {
 
   const clickOnSecret = () => {
     for (let index = 0; index < cards.length / 2; index++) {
-      let cardA = cards.find((o) => o.id === index + 'a')
-      let cardB = cards.find((o) => o.id === index + 'b')
+      const cardA = cards.find((o) => o.id === index + 'a')
+      const cardB = cards.find((o) => o.id === index + 'b')
       if (!guessed.includes(cardA)) {
         setGuessed([...guessed, cardA, cardB])
         return null
