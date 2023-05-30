@@ -5,11 +5,9 @@ import { Header } from './components/Header'
 function App() {
   return (
     <main className="grid h-screen place-content-center bg-slate-900 font-press-start">
-      <section className="m-4">
-        <Header />
-        <Game />
-        <Footer author="Pablo Pedraza" github="wayaba" />
-      </section>
+      <Header />
+      <Game />
+      <Footer author="Pablo Pedraza" github="wayaba" />
     </main>
   )
 }

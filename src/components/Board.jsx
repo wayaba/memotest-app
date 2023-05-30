@@ -53,9 +53,10 @@ export function Board({ cardQty = 12 }) {
             onClick={() => clickOnCard(img)}
           >
             <img
-              className={`p-2 rounded bg-white lg:w-32 w-16 ${
-                showImg(img) ? 'rotate-vertical-center' : ''
-              }`}
+              // className={`p-2 rounded bg-white lg:w-32 w-16 ${
+              //   showImg(img) ? 'rotate-vertical-center' : ''
+              // }`}
+              className="p-2 rounded bg-white lg:w-32 w-16"
               alt={img.id}
               src={showImg(img) ? img.value : HIDDEN_IMG}
             />

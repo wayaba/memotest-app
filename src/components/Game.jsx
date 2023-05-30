@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Board } from './Board'
+import { Cafecito } from './Icons'
 
 export function Game() {
   const [start, setStart] = useState(false)
@@ -43,6 +44,16 @@ export function Game() {
           >
             Comenzar juego
           </button>
+          <div className="mt-4">
+            <a
+              href="https://cafecito.app/pablojpedraza"
+              rel="noopener"
+              target="_blank"
+              className="text-center items-center justify-center hover:opacity-70 m-auto"
+            >
+              <Cafecito />
+            </a>
+          </div>
         </section>
       )}
     </>
