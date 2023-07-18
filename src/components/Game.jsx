@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Board } from './Board'
-import { Cafecito } from './Icons'
 
 export function Game() {
   const [start, setStart] = useState(false)
@@ -10,7 +9,7 @@ export function Game() {
       {start ? (
         <Board cardQty={cardQty} />
       ) : (
-        <section className="gird grid-col-1 items-center text-gray-200 text-center p-2 rounded-lg m-6">
+        <section className="gird grid-col-1 items-center text-gray-200 text-center p-2 rounded-lg m-6 border border-solid">
           <p className="m-4">Selecciona la cantidad de tarjetas</p>
           <div className="flex flex-row items-center place-content-center m-4">
             <div className="p-1">
@@ -44,16 +43,6 @@ export function Game() {
           >
             Comenzar juego
           </button>
-          <div className="mt-4">
-            <a
-              href="https://cafecito.app/pablojpedraza"
-              rel="noopener"
-              target="_blank"
-              className="text-center items-center justify-center hover:opacity-70 m-auto"
-            >
-              <Cafecito />
-            </a>
-          </div>
         </section>
       )}
     </>
