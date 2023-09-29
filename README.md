@@ -1,4 +1,4 @@
-# Memotest App 🎮
+# Memotest 🎮
 
 Memotest desarrollado con Vite + ReactJs + Tailwind
 
@@ -16,4 +16,4 @@ pnpm dev
 
 ## DEMO
 
-https://memotest-app.vercel.app/
+[link](https://memotest-app.vercel.app/)
