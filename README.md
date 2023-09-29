@@ -1,6 +1,6 @@
 # Memotest 🎮
 
-Memotest desarrollado con Vite + ReactJs + Tailwind
+- desarrollado con Vite + ReactJs + Tailwind
 
 ## Getting Started
 
